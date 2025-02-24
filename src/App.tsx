@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Banner from "./components/Banner";
+import GalleryButton from "./components/GalleryButton";
+import Particles from "./components/Particles";
 
-function App() {
+import "./styles/style.css";  
+
+// Function to handle click
+const handleGalleryClick = () => {
+  console.log("Gallery button clicked!");
+};
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ position: "relative", width: "100%", height: "100vh", overflow: "hidden" }}>
+      {/* Make Particles the background */}
+      <div style={{ 
+        position: "absolute", 
+        top: 0, 
+        left: 0, 
+        width: "100%", 
+        height: "100vh", 
+        zIndex: -1 
+      }}>
+        <Particles />
+      </div>
+
+      {/* Main content */}
+      <Banner />
+      <GalleryButton onClick={handleGalleryClick} />
     </div>
   );
-}
+};
 
 export default App;

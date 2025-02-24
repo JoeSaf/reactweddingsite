@@ -28,6 +28,28 @@
   color: #61dafb;
 }
 
+button {
+  background-color: #25283b; /* Dark background */
+  color: #fff; /* White text */
+  font-family: 'Poppins', sans-serif; /* Adjust based on your chosen font */
+  font-size: 1.5rem;
+  padding: 12px 24px; /* Padding around the button */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Slight rounded corners */
+  cursor: pointer; /* Indicate clickable */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+button:hover {
+  background-color: #1e2534; /* Darken the background when hovering */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+button:focus {
+  outline: none; /* Remove the default focus outline */
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +58,4 @@
     transform: rotate(360deg);
   }
 }
+
