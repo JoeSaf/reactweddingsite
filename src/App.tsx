@@ -1,34 +1,41 @@
 import React from "react";
-import Banner from "./components/Banner";
-import GalleryButton from "./components/GalleryButton";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Content from "./pages/Content";  // Home Page
+import Gallery from "./pages/Gallery";  // Gallery
+import Banner from "./components/Banner"; // Ensure Banner is imported
 import Particles from "./components/Particles";
 
 import "./styles/style.css";  
 
-// Function to handle click
-const handleGalleryClick = () => {
-  console.log("Gallery button clicked!");
-};
-
 const App: React.FC = () => {
   return (
-    <div style={{ position: "relative", width: "100%", height: "100vh", overflow: "hidden" }}>
-      {/* Make Particles the background */}
-      <div style={{ 
-        position: "absolute", 
-        top: 0, 
-        left: 0, 
-        width: "100%", 
-        height: "100vh", 
-        zIndex: -1 
-      }}>
-        <Particles />
-      </div>
+    <Router>
+      <Routes>
+        {/* Home Page with Banner and Particles */}
+        <Route 
+          path="/" 
+          element={
+            <div style={{ position: "relative", width: "100%", height: "100vh", overflow: "hidden" }}>
+              <div style={{ 
+                position: "absolute", 
+                top: 0, 
+                left: 0, 
+                width: "100%", 
+                height: "100vh", 
+                zIndex: -1 
+              }}>
+                <Particles />
+              </div>
+              <Banner /> {/* Add Banner component here */}
+              <Content />
+            </div>
+          } 
+        />
 
-      {/* Main content */}
-      <Banner />
-      <GalleryButton onClick={handleGalleryClick} />
-    </div>
+        {/* Gallery Page with ONLY Particles */}
+        <Route path="/gallery" element={<Gallery />} />
+      </Routes>
+    </Router>
   );
 };
 

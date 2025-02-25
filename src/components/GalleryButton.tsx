@@ -1,14 +1,16 @@
 import React from "react";
-import "../App.css"
+import { Link } from "react-router-dom";
+import "../App.css";
 
-interface GalleryButtonProps {
-  onClick?: () => void; // Make onClick optional
-}
-
-const GalleryButton: React.FC<GalleryButtonProps> = ({ onClick }) => {
+const GalleryButton: React.FC = () => {
   return (
     <h2>
-      <button onClick={onClick}>Gallery</button>
+      {/* Make it a button but wrapped inside a Link to keep routing */}
+      <Link to="/gallery">
+        <button className="gallery-button">
+          Gallery
+        </button>
+      </Link>
     </h2>
   );
 };

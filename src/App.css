@@ -38,6 +38,8 @@ button {
   border-radius: 5px; /* Slight rounded corners */
   cursor: pointer; /* Indicate clickable */
   transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  position: relative; /* Make sure it's in the right stacking context */
+  z-index: 10; /* Ensure it's clickable if there's any overlap */
 }
 
 button:hover {
@@ -46,7 +48,7 @@ button:hover {
 }
 
 button:focus {
-  outline: none; /* Remove the default focus outline */
+  outline: 2px solid #4CAF50;; /* Remove the default focus outline */
 }
 
 
