@@ -32,7 +32,7 @@ const Masonry: React.FC<MasonryProps> = ({ data }) => {
       } else if (window.innerWidth >= 600) {
         setColumns(3);
       } else {
-        setColumns(1);
+        setColumns(2);
       }
     };
 
