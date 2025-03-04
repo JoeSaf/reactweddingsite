@@ -1,6 +1,8 @@
 import React from "react";
 //import { Link } from "react-router-dom";
 import GalleryButton from "../components/GalleryButton";
+import UploadButton  from "../components/UploadButton";
+
 
 const Content: React.FC = () => {
   return (
@@ -12,11 +14,12 @@ const Content: React.FC = () => {
 
       <div className="author">
         <h2>Gallery</h2>
-        <p><b>Wed Memories</b></p>
-        <p>Share your memory with us</p>
+        <p><b>Photo Memories</b></p>
+        <p>Share your photo memory</p>
         <p>Copyright@NeJo_2025</p>
 
-        {/* Gallery Button inside the author section */}
+        {/* Buttons inside the author section */}
+        <UploadButton />
         <GalleryButton />
       </div>
 
