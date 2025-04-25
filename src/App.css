@@ -1,63 +1,97 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Gallery Specific Styles */
+.gallery-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-button {
-  background-color: #25283b; /* Dark background */
-  color: #fff; /* White text */
-  font-family: 'Poppins', sans-serif; /* Adjust based on your chosen font */
-  font-size: 1.5rem;
-  padding: 12px 24px; /* Padding around the button */
-  border: none; /* Remove default border */
-  border-radius: 5px; /* Slight rounded corners */
-  cursor: pointer; /* Indicate clickable */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
-  position: relative; /* Make sure it's in the right stacking context */
-  z-index: 10; /* Ensure it's clickable if there's any overlap */
-}
-
-button:hover {
-  background-color: #1e2534; /* Darken the background when hovering */
-  transform: scale(1.05); /* Slightly enlarge the button on hover */
-}
-
-button:focus {
-  outline: 2px solid #4CAF50;; /* Remove the default focus outline */
-}
-
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .particles-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.8;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .gallery-content {
+    padding: 20px;
+    position: relative;
+    z-index: 1;
   }
-}
-
+  
+  /* Masonry Styles (preserving your layout) */
+  .masonry {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .masonry > div {
+    position: absolute;
+    will-change: transform, width, height, opacity;
+    padding: 5px;
+  }
+  
+  .masonry > div > div {
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-size: 10px;
+    line-height: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 50px -10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .masonry > div > div:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 15px 50px -10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Status Messages */
+  .loading-message,
+  .error-message {
+    color: white;
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+  
+  .error-message {
+    color: #ff6b6b;
+  }
+  
+  /* Upload Button Extensions */
+  .upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .file-info {
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 8px;
+  }
+  
+  .upload-button.confirm {
+    background-color: #4CAF50;
+    margin-top: 8px;
+  }
+  
+  .upload-button.confirm:hover {
+    background-color: #3e8e41;
+  }
