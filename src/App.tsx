@@ -4,6 +4,7 @@ import Content from "./pages/Content";  // Home Page
 import Gallery from "./pages/Gallery";  // Gallery
 import Banner from "./components/Banner"; // Ensure Banner is imported
 import Particles from "./components/Particles";
+import GalleryListings from "./pages/GalleryListings";//gallery listings page
 
 import "./styles/style.css";  
 
@@ -34,6 +35,7 @@ const App: React.FC = () => {
 
         {/* Gallery Page with ONLY Particles */}
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="gallerylistings" element={<GalleryListings />} />
       </Routes>
     </Router>
   );

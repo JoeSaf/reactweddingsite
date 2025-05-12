@@ -266,3 +266,24 @@ const App: React.FC = () => {
 };
 
 export default App;
+
+
+-------------------------------------------------
+--- dont forget to re-add the gallery button 
+--- but add the gallery button to the gallery listings
+
+```tsx
+const GalleryButton: React.FC = () => {
+  return (
+    <h2>
+      {/* Make it a button but wrapped inside a Link to keep routing */}
+      <Link to="/gallery">
+        <button className="gallery-button">
+          Gallery
+        </button>
+      </Link>
+    </h2>
+  );
+};
+
+```

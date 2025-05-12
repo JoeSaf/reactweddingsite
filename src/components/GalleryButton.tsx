@@ -6,7 +6,7 @@ const GalleryButton: React.FC = () => {
   return (
     <h2>
       {/* Make it a button but wrapped inside a Link to keep routing */}
-      <Link to="/gallery">
+      <Link to="/gallerylistings">
         <button className="gallery-button">
           Gallery
         </button>
